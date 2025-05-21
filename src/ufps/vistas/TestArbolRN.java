@@ -38,7 +38,20 @@ public class TestArbolRN {
             arbolBST.insertar(libro);
         }
         long fin = System.nanoTime();
-        System.out.println("Tiempo de inserción en árbol BST: " + (fin - inicio) + " ns");
+        System.out.println("Tiempo de insercion en ArbolBST: " + (fin - inicio) + " ns");
+        
+        // BUSCAR ArbolBST
+        inicio = System.nanoTime();
+        boolean encontrado = arbolBST.esta(new Libro(50, "", ""));
+        fin = System.nanoTime();
+        System.out.println("Tiempo de busqueda en ArbolBST: " + (fin - inicio) + " ns, encontrado: " + encontrado);
+        
+        // ELIMINAR ArbolBST
+        inicio = System.nanoTime();
+        arbolBST.eliminar(new Libro(30, "", ""));
+        fin = System.nanoTime();
+        System.out.println("Tiempo de eliminacion en ArbolBST: " + (fin - inicio) + " ns");
+        
         
         // INSERTAR ArbolRN
         inicio = System.nanoTime();
@@ -47,22 +60,22 @@ public class TestArbolRN {
             arbolRN.insertar(libro);
         }
         fin = System.nanoTime();
-        System.out.println("Tiempo de inserción en árbol RojiNegro: " + (fin - inicio) + " ns");
+        System.out.println("Tiempo de insercion en ArbolRN: " + (fin - inicio) + " ns");
         
-        // BUSCAR
+        // BUSCAR ArbolRN
         inicio = System.nanoTime();
-        boolean encontrado = arbolRN.esta(new Libro(50, "", ""));
+        encontrado = arbolRN.esta(new Libro(50, "", ""));
         fin = System.nanoTime();
-        System.out.println("Tiempo de búsqueda: " + (fin - inicio) + " ns, encontrado: " + encontrado);
+        System.out.println("Tiempo de busqueda en ArbolRN: " + (fin - inicio) + " ns, encontrado: " + encontrado);
 
-        // ELIMINAR
+        // ELIMINAR ArbolRN
         inicio = System.nanoTime();
         arbolRN.eliminar(new Libro(30, "", ""));
         fin = System.nanoTime();
-        System.out.println("Tiempo de eliminación: " + (fin - inicio) + " ns");
-
+        System.out.println("Tiempo de eliminacion en ArbolRN: " + (fin - inicio) + " ns");
+        
         // IMPRIMIR
-        System.out.println("\nImpresión del árbol Rojo-Negro:");
-        arbolRN.imprime();
+        //System.out.println("\nImpresión del árbol Rojo-Negro:");
+        //arbolRN.imprime();
     }
 }
